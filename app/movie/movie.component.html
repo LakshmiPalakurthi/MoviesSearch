@@ -1,4 +1,4 @@
-<div class="moviebox">
+<div class="moviebox" routerLink="movie/{{data.id}}">
   <div class="title">
     <div>
       {{data.title}}
@@ -20,7 +20,5 @@
         {{data.overview}}
     </ng-container>
   </div>
-  <div class="actions">
-    <a routerLink="movie/{{data.id}}">See more</a>
-  </div>
+  
 </div>
