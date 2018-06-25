@@ -11,8 +11,6 @@ export class SearchComponent implements OnInit {
   resultsArray: any = [];
   keyword;
   fav = false;
-  favSearches;
-  recentSearches;
   @Output()
   localStorageEvent = new EventEmitter();
   pages = [];
@@ -23,8 +21,6 @@ export class SearchComponent implements OnInit {
     this.resultsArray = this.get.moviesArr;
     this.pages = this.get.pages;
     this.keyword = this.get.keyword;
-    this.favSearches = this.get.getFavKeys();
-    this.recentSearches = this.get.getSearchKeys();
   }
 
   search(x) {
@@ -49,12 +45,9 @@ export class SearchComponent implements OnInit {
           if (this.resultsArray.length > 0) {
 
               this.get.putSearchKeys(this.keyword);
-              this.recentSearches = this.get.getSearchKeys();
 
             if (this.fav) {
               this.get.putFavKeys(this.keyword);
-              this.favSearches = this.get.getFavKeys();
-
             }
           }
         }
@@ -72,20 +65,6 @@ export class SearchComponent implements OnInit {
           this.resultsArray = res.results;
         }
     );
-  }
-
-  setFavKeys() {
-    this.favSearches = this.get.getFavKeys();
-    console.log(this.favSearches);
-  }
-
-  setSearchKeys() {
-    this.recentSearches = this.get.getSearchKeys();
-   /*let x = this.getS.getSearchKeys();
-   x.subscribe((res) => {
-      console.log('Response', res);
-    });
-    console.log(this.recentSearches);*/
   }
 
 }
