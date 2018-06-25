@@ -8,10 +8,10 @@
     background-color: #FFF;
     box-shadow: 2px 2px 7px #dadada;
     margin: 10px 0;
-    
-}
+    cursor: pointer;
+}.moviebox:hover{background-color:#eef;}
 .moviebox .title{
-    display: flex;
+     display: flex;
     padding: 5px 20px;
     flex-grow: 1;
 }

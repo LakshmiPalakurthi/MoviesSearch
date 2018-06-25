@@ -35,13 +35,16 @@ import { MovieDetailsServiceService } from './movie-details-service.service';
       }
     ])
   ],
-  providers: [GetService, MovieDetailsServiceService],
+  providers: [GetService, MovieDetailsServiceService, BoxComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor() {
     if (!localStorage.getItem('searchKeys')) {
       localStorage.setItem('searchKeys', JSON.stringify([]));
+    }
+    if (!localStorage.getItem('favKeys')) {
+      localStorage.setItem('favKeys', JSON.stringify([]));
     }
   }
 }

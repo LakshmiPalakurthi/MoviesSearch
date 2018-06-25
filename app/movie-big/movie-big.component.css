@@ -17,6 +17,7 @@
 }
 .main-box > *{
     width: 100%;
+    float: left;
     box-sizing: border-box;
     padding: 5px 20px;
     margin: 5px 0;
@@ -67,4 +68,15 @@
 }
 .runtime{
     font-size: 14px;
+}
+.back{
+    width: 100%;
+}
+.back p{
+  color: #000;
+    float: left;
+    width: 100px;
+    margin: 0 ;
+    padding: 5px;     cursor: pointer;
+    font-size: 12px;
 }

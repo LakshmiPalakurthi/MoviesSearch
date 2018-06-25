@@ -13,4 +13,5 @@ export class MovieDetailsServiceService {
     return this.http.
       get(`https://api.themoviedb.org/3/movie/${id}?api_key=2ebe0069d1b5c50c03534a0b2c6ade7f&language=en-US`);
   }
+
 }

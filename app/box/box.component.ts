@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-box',
@@ -7,10 +8,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class BoxComponent implements OnInit {
 
+  @ViewChild(SearchComponent)
+  child:SearchComponent;
   constructor() { }
   @Output()
   eventToApp = new EventEmitter();
   ngOnInit() {
+    
   }
 
   respondx(data) {
