@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="sbox">
+    <input type="text"  (keyup.enter)="search(query.value)" #query/>
+    <button (click)="search(query.value)">Search</button>
+  </div>
+
+</div>
+
+<div class="row boxM" *ngIf="resultsArray.length > 0">
+ 
+  
+    <app-movie [data]="x" *ngFor="let x of resultsArray"></app-movie>
+
+    <div class="row" [style.justifyContent]="'center'">
+      
+        <ul class="pages">
+          <li *ngFor="let x of pages" (click)="paginate(x)" [class.activepage]= "x==pageActive">
+            {{x}}
+          </li>
+        </ul>
+    </div>
+</div>

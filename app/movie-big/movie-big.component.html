@@ -1,0 +1,33 @@
+<div class="main-box">
+    <div class="name">
+        {{details.original_title}}
+    </div>
+    <div class="date">
+        Released on: {{details.release_date}}
+    </div>
+    <div class="genres" *ngIf="details.genres.length">
+          <h4>Genres</h4>
+          <ul>
+            <li *ngFor="let x of details.genres">
+              {{x.name}}
+            </li>
+          </ul>
+        </div>
+    
+    <div class="companies" *ngIf="details.production_companies.length">
+        <h4>Production Companies</h4>
+        <ul>
+            <li *ngFor="let x of details.production_companies">
+              {{x.name}}
+            </li>
+        </ul>
+    </div>
+    <div class="desc" *ngIf="details.overview.length">
+        {{details.overview}}
+    </div>
+    <div class="runtime" *ngIf="details.runtime">
+        Runtime : {{details.runtime}}
+    </div>
+      
+      
+</div>

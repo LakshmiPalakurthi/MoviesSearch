@@ -1,0 +1,26 @@
+<div class="moviebox">
+  <div class="title">
+    <div>
+      {{data.title}}
+      
+    </div>
+    <div class="rating">
+      {{data.vote_average}}
+    </div>
+    <div>
+      {{data.release_date.slice(0,4)}}
+    </div>
+    
+  </div>
+  <div class="desc">
+    <ng-container *ngIf="data.overview.length > 125">
+        {{data.overview.slice(0,125) + ' ...'}}
+    </ng-container>
+    <ng-container *ngIf="data.overview.length <= 125">
+        {{data.overview}}
+    </ng-container>
+  </div>
+  <div class="actions">
+    <a routerLink="movie/{{data.id}}">See more</a>
+  </div>
+</div>

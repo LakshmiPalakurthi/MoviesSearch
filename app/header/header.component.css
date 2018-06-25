@@ -1,0 +1,19 @@
+.header{
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 100%;
+    height: 60px;
+    color: #FFF;
+    background: #8E2DE2; 
+    align-items: center;
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); 
+    box-shadow: 2px 2px 2px #969393;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+.header div{
+    cursor: pointer;
+}

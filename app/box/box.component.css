@@ -1,0 +1,5 @@
+app-search{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}

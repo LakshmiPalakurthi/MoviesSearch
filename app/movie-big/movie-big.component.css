@@ -1,0 +1,70 @@
+.name{
+    color: #5b1e94;
+    font-size: 22px;
+}
+.date{
+    color: bisque;
+    background-color: black;
+    float: left;
+    font-size: 12px;
+    padding: 5px 10px;
+}
+.main-box{
+    width: 300px;
+    background-color: #FFF;
+    box-shadow: 2px 2px 14px #c3c0c0;
+    padding: 20px;
+}
+.main-box > *{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 20px;
+    margin: 5px 0;
+}
+.genres ul {
+    width: 100%;
+}
+.genres ul li{
+    list-style: none;
+
+}
+.desc{
+    color: blueviolet;
+    padding: 5px 10px;
+    float: left;
+    font-size: 12px;
+    background-color: #FFF ;
+}
+.runtime{
+    color: rgb(226, 43, 171);
+    padding: 5px 10px;
+    float: left;
+}
+.genres{
+
+}
+.genres ul li{
+    font-size: 14px;
+    background-color: #000;
+    color: #FFF;
+    padding: 5px;
+    margin: 3px 0;
+    list-style: none;
+}
+.companies{
+}
+.companies ul, .genres ul{
+    padding: 0;
+    margin: 0;
+}
+.companies ul li{
+    list-style: none;
+    background-color: #000;
+    color: #FFF;
+    padding: 5px;
+    margin: 3px 0;
+    font-size: 14px;
+}
+.runtime{
+    font-size: 14px;
+}
