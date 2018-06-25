@@ -12,14 +12,14 @@
     </div>
     <div class="genres" *ngIf="details.genres">
           <h4>Genres</h4>
-          <ul *ngIf="details.genres.length">
+          <ul *ngIf="details.genres">
             <li *ngFor="let x of details.genres">
               {{x.name}}
             </li>
           </ul>
         </div>
     
-    <div class="companies" *ngIf="details.production_companies.length">
+    <div class="companies" *ngIf="details.production_companies">
         <h4>Production Companies</h4>
         <ul>
             <li *ngFor="let x of details.production_companies">
@@ -27,7 +27,7 @@
             </li>
         </ul>
     </div>
-    <div class="desc" *ngIf="details.overview.length">
+    <div class="desc" *ngIf="details.overview">
         {{details.overview}}
     </div>
     <div class="runtime" *ngIf="details.runtime">
