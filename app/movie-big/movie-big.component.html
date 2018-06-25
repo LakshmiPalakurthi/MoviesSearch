@@ -10,9 +10,9 @@
     <div class="date">
         Released on: {{details.release_date}}
     </div>
-    <div class="genres" *ngIf="details.genres.length">
+    <div class="genres" *ngIf="details.genres">
           <h4>Genres</h4>
-          <ul>
+          <ul *ngIf="details.genres.length">
             <li *ngFor="let x of details.genres">
               {{x.name}}
             </li>

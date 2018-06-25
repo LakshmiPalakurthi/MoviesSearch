@@ -1,27 +1,68 @@
 <div class="row" [style.flexDirection]="'column'">
   <div class="sbox">
-    <input type="text" class="text" (keyup.enter)="search(query.value)" #query/>
+    <input type="text" class="text"  placeholder="Search movies" (keyup.enter)="search(query.value)" #query/>
 
     <button (click)="search(query.value)">Search</button>
   </div>
   <div class="sbox">
     <input type="checkbox" (change)="fav = !fav" [checked]="fav"/>
-    <label for=""  (click)="fav = !fav">Mark this keyword as favourite</label>
+    <label for=""  (click)="fav = !fav">Favourite this search</label>
   </div>
 
 </div>
 
 <div class="row boxM" *ngIf="resultsArray.length > 0">
- 
-  
-    <app-movie [data]="x" *ngFor="let x of resultsArray"></app-movie>
 
-    <div class="row" [style.justifyContent]="'center'">
-      
-        <ul class="pages">
-          <li *ngFor="let x of pages" (click)="paginate(x)" [class.activepage]= "x==pageActive">
+    <div class="side">
+
+        <ul>
+          <li>
+            Search History
+          </li>
+          <li *ngFor="let x of recentSearches" (click)="query.value = x;search(x)">
+            {{x}}
+          </li>
+        </ul>
+        <ul>
+          <li>
+            Favourite Searches
+          </li>
+          <li *ngFor="let x of favSearches" (click)="query.value = x;search(x)">
             {{x}}
           </li>
         </ul>
     </div>
+    
+    <div class="full">
+        <div [ngStyle]="{display:'flex', 'justify-content': 'space-between', 'align-items': 'center'}">
+          <div>
+             
+          </div>
+          <div  [ngStyle]="{display:'flex', 'justify-content': 'space-between', 'align-items': 'center'}">
+                <div [style.cursor]="'pointer'" (click)="pageActive > 1 ? paginate(pageActive - 1) :  false"> < Prev  </div>
+                <ul class="pages" [style.width]="'200px'">
+                  <li *ngFor="let x of pages" (click)="paginate(x)" [class.activepage]= "x==pageActive">
+                    {{x}}
+                  </li>
+                </ul>
+                <div [style.cursor]="'pointer'" (click)="pageActive < pages.length ? paginate(pageActive+1) :  false"> Next > </div>
+          </div>
+        </div>
+        <app-movie [data]="x" *ngFor="let x of resultsArray"></app-movie>
+
+        <div class="row page-row" [style.justifyContent]="'flex-end'" [style.alignItems]="'center'">
+            <div [style.cursor]="'pointer'" (click)="pageActive > 1 ? paginate(pageActive - 1) :  false">< Prev </div>
+            <ul class="pages">
+              
+              <li *ngFor="let x of pages" (click)="paginate(x)" [class.activepage]= "x==pageActive">
+                          {{x}}
+              </li>
+            </ul>
+           
+            
+            <div [style.cursor]="'pointer'" (click)="pageActive < pages.length ? paginate(pageActive+1) :  false">Next ></div>
+
+        </div>
+    </div>
+    
 </div>

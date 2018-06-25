@@ -1,2 +1,1 @@
 "# simpleNg" 
-1.Created a Search results page for Movies. 2.Input partial or complete movie name in the Input box , favorite the search if you wanted to and click Search   button. 3.You will get all the data related to that search term.The list is paginated . 4.If you want more details just click on a item , it will take  you to a detailed version of the movie. 5.On the left you have your 'Recent searches' and also the 'Favorite searches' you marked as.  Used Angular 6, TypeScript, HTML ,CSS 
