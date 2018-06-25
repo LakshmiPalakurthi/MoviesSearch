@@ -10,6 +10,7 @@ export class SearchComponent implements OnInit {
 
   resultsArray: any = [];
   keyword;
+  fav = false;
   @Output()
   localStorageEvent = new EventEmitter();
   pages = [];
@@ -42,16 +43,19 @@ export class SearchComponent implements OnInit {
           }
           console.log(this.pages);
           if (this.resultsArray.length > 0) {
-            const arr = JSON.parse(localStorage.getItem('searchKeys'));
-            if (!arr.includes(x)) {
-              arr.push(x);
-              this.localStorageEvent.emit(arr);
+
+              this.get.putSearchKeys(this.keyword);
+
+            if (this.fav) {
+              this.get.putFavKeys(this.keyword);
             }
-            console.log(arr);
-            localStorage.setItem('searchKeys', JSON.stringify(arr));
           }
         }
     );
+  }
+
+  setFav() {
+    console.log(this.fav);
   }
   paginate(x) {
     this.pageActive = x;

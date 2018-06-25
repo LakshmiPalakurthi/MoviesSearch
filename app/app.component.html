@@ -2,15 +2,23 @@
   <div class="row">
     <app-header></app-header>
   </div>
-  <div class="row" [style.flexDirection]="'column'">
+  <div class="row x-grid">
    
     <div class="side">
 
       <ul>
         <li>
-          Latest searches
+          Search History
         </li>
-        <li *ngFor="let x of recentSearches">
+        <li *ngFor="let x of recentSearches" (click)="search(x)">
+          {{x}}
+        </li>
+      </ul>
+      <ul>
+        <li>
+          Favourites **
+        </li>
+        <li *ngFor="let x of favSearches">
           {{x}}
         </li>
       </ul>

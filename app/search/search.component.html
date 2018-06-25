@@ -1,7 +1,12 @@
-<div class="row">
+<div class="row" [style.flexDirection]="'column'">
   <div class="sbox">
-    <input type="text"  (keyup.enter)="search(query.value)" #query/>
+    <input type="text" class="text" (keyup.enter)="search(query.value)" #query/>
+
     <button (click)="search(query.value)">Search</button>
+  </div>
+  <div class="sbox">
+    <input type="checkbox" (change)="fav = !fav" [checked]="fav"/>
+    <label for=""  (click)="fav = !fav">Mark this keyword as favourite</label>
   </div>
 
 </div>

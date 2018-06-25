@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     flex-grow: 1;
     justify-content: center;
-    height: 30px;
+    height: 50px;
 
 }
 .row.boxM{
@@ -14,7 +14,7 @@
     box-sizing: border-box;
     background-color: #f1f1f1;
 }
-.sbox input{
+.sbox input.text{
     outline: 0;
     padding: 5px;
     box-sizing: border-box;
@@ -26,6 +26,7 @@
     border-width: 2px ;
     
 }
+
 .sbox button{
     color: #FFF;
     background: #8E2DE2; 

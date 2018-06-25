@@ -13,6 +13,7 @@ app-header{
 .side{
     flex-basis: 100%;
     flex-grow: 2;
+    justify-content: flex-start;
 }
 .box{
     flex-grow: 2;
@@ -38,4 +39,9 @@ app-header{
 .side ul li:first-child{
     background-color: #FFF;
     color: #000;
+}
+
+.x-grid{
+    display: grid;
+    grid-template-columns: 200px auto;
 }
